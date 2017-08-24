@@ -209,24 +209,33 @@ public class Datos extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void ModificarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ModificarActionPerformed
-        File file = new File("Altas.csv");
+        File file = new File("Archivos.csv");
         StringBuffer strContent = new StringBuffer();
-        int ch;
-       String line;
-      
+        
+        String line;
+        String s[] = null;
         BufferedReader reader;
         try {
             Integer field = 0;
             reader = new BufferedReader(new FileReader(file));
-            
+            while ((line = reader.readLine()) != null) 
+            {
+                s=line.split("\\|");
+                if(s[0] == nif.getText())
+                {
+                    
+                }
+            }
             
             reader.close();
+            
         } catch (IOException e) {
             System.out.println(strContent);
         } catch (Exception ex) { 
             System.out.println(ex);
         }
-                   
+         
+            
     }//GEN-LAST:event_ModificarActionPerformed
 
     private void borrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_borrarActionPerformed
